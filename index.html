@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kalkulator HRM</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script>
+        function oblicz()
+        {
+            var a = parseFloat(document.getElementById("wiek").value);
+            var b = parseFloat(document.getElementById("waga").value);
+            var hml = 202-(0.55*a);
+            var hml1 = 207.2-(0.65*a);
+            var hml2 = 220-a;
+            var hml3 = 210-(0.5*a)-(0.022*b)+4;
+            document.getElementById("wynik").innerHTML = hml;
+            document.getElementById("wynik1").innerHTML = hml1;
+            document.getElementById("wynik2").innerHTML = hml2;
+            document.getElementById("wynik3").innerHTML = hml3;
+        }
+        function oblicz1()
+        {
+            var a = parseFloat(document.getElementById("wiek").value);
+            var b = parseFloat(document.getElementById("waga").value);
+            var hml = 216-(1.09*a);
+            var hml1 = 209.6-(0.72*a);
+            var hml2 = 220-a;
+            var hml3 = 210-(0.5*a)-(0.022*b);
+            document.getElementById("wynik").innerHTML = hml;
+            document.getElementById("wynik1").innerHTML = hml1;
+            document.getElementById("wynik2").innerHTML = hml2;
+            document.getElementById("wynik3").innerHTML = hml3;
+        }
+    </script>
+</head>
+<body>
+    <h1> Oblicz swoje HRM</h1>
+    <h2>==================</h2> 
+    <label for "wiek">Podaj swój wiek:</label>
+     <input type="number" id="wiek">
+     <label for "waga">Podaj swoją wagę:</label>
+    <input type="number" id="waga"> 
+    <div id="1"></div>
+    <button onclick="oblicz()">Oblicz HRM dla mężczyzny:</button>
+    <button onclick="oblicz1()">Oblicz HRM dla kobiety:</button>
+    <div id="wynik">Tu będzie wynik:</div>
+    <div id="wynik1"></div>
+    <div id="wynik2"></div>
+    <div id="wynik3"></div>
+</body>
+</html>
